@@ -60,7 +60,7 @@ def create_file(data):
     try:
         with open(path, 'w', encoding='utf-8') as f:
             f.write(content)
-            f.close()
+            # no need to call f.close() explicitly inside a with block
         return {'success': True}
     except Exception as e:
         raise ValueError(f"Error creating file: {str(e)}")
@@ -102,39 +102,3 @@ def kill_process(data):
     """结束进程"""
     pid = data.get('pid')
     if not pid:
-        raise ValueError("No process ID provided")
-    
-    try:
-        process = psutil.Process(pid)
-        process.terminate()
-        return {'success': True}
-    except Exception as e:
-        raise ValueError(f"Error killing process: {str(e)}")
-
-# 系统监控
-@app.on_message('get_system_metrics')
-def get_system_metrics(data):
-    """获取系统指标"""
-    try:
-        return {
-            'cpu': {
-                'percent': psutil.cpu_percent(interval=1),
-                'count': psutil.cpu_count(),
-                'freq': psutil.cpu_freq()._asdict() if psutil.cpu_freq() else None
-            },
-            'memory': psutil.virtual_memory()._asdict(),
-            'disk': psutil.disk_usage('/')._asdict(),
-            'network': {
-                'bytes_sent': psutil.net_io_counters().bytes_sent,
-                'bytes_recv': psutil.net_io_counters().bytes_recv
-            }
-        }
-    except Exception as e:
-        raise ValueError(f"Error getting system metrics: {str(e)}")
-
-@app.route('/')
-def index():
-    return app.render_template('index.html')
-
-if __name__ == '__main__':
-    app.run(debug=True)
