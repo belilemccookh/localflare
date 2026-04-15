@@ -1,5 +1,6 @@
 from localflare import LocalFlare
 
+# Personal fork - running on port 8080 to avoid conflicts with other local services
 app = LocalFlare(__name__, title="Hello LocalFlare")
 
 @app.route('/')
@@ -40,4 +41,4 @@ def index():
     '''
 
 if __name__ == '__main__':
-    app.run() 
+    app.run(port=8080)
