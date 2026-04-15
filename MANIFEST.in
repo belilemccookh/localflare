@@ -6,5 +6,10 @@ recursive-include localflare/templates *
 recursive-include localflare/static *
 # Also include config files and locale data
 recursive-include localflare/locale *
+# Include default config file if present
+include localflare/config.default.yaml
 global-exclude __pycache__
 global-exclude *.py[cod]
+# Exclude editor backup files
+global-exclude *~
+global-exclude *.swp
