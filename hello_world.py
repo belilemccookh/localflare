@@ -21,13 +21,7 @@ def index():
                 }
                 .container {
                     text-align: center;
-                    padding: 2rem;
-                    background-color: white;
-                    border-radius: 10px;
-                    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-                }
-                h1 {
-                    color: #333;
+                    padding:  2px 5px rgba(    color: #333;
                 }
             </style>
         </head>
@@ -41,4 +35,5 @@ def index():
     '''
 
 if __name__ == '__main__':
-    app.run(port=8080)
+    # debug=True enables auto-reload on file changes, handy during local development
+    app.run(port=8080, debug=True)
