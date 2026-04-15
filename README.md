@@ -49,6 +49,8 @@ localflare start
 
 This will set up a new project and start a local server for development.
 
+> **Personal note:** I've been using `localflare start --port 8080` to avoid conflicts with other services running on the default port. Worth trying if you run into port binding issues.
+
 ## Alternatives
 
 Localflare provides a range of alternatives to Electron, including:
