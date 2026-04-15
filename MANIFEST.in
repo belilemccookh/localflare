@@ -3,4 +3,8 @@ include README.md
 include README_zh.md
 include requirements.txt
 recursive-include localflare/templates *
-recursive-include localflare/static * 
+recursive-include localflare/static *
+# Also include config files and locale data
+recursive-include localflare/locale *
+global-exclude __pycache__
+global-exclude *.py[cod]
