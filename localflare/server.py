@@ -31,7 +31,7 @@ class LocalFlare:
     def __init__(
         self,
         name: str = "localflare",
-        host: str = "0.0.0.0",
+        host: str = "127.0.0.1",  # Changed from 0.0.0.0 — bind to localhost only by default for safety
         port: int = 5000,
         debug: bool = False,
         static_folder: Optional[str] = None,
@@ -42,7 +42,7 @@ class LocalFlare:
 
         Args:
             name: Application name, used as Flask's import_name.
-            host: Host address to bind to.
+            host: Host address to bind to. Defaults to 127.0.0.1 (localhost only).
             port: Port number to listen on.
             debug: Enable Flask debug mode.
             static_folder: Path to the static files folder.
@@ -96,44 +96,4 @@ class LocalFlare:
             port: Override the instance port.
             debug: Override the instance debug flag.
             threaded: Handle each request in a separate thread.
-        """
-        _host = host or self.host
-        _port = port or self.port
-        _debug = debug if debug is not None else self.debug
-
-        local_ip = self._get_local_ip()
-        print(f" * LocalFlare running on http://{local_ip}:{_port}")
-        print(f" * Also available at  http://127.0.0.1:{_port}")
-        print("   Press CTRL+C to quit.")
-
-        self.app.run(host=_host, port=_port, debug=_debug, threaded=threaded)
-
-    def run_background(self, **kwargs):
-        """Start the server in a background daemon thread.
-
-        Useful for testing or embedding in larger applications.
-        """
-        self._thread = threading.Thread(
-            target=self.run, kwargs=kwargs, daemon=True
-        )
-        self._thread.start()
-
-    # ------------------------------------------------------------------
-    # Utilities
-    # ------------------------------------------------------------------
-
-    @staticmethod
-    def _get_local_ip() -> str:
-        """Return the machine's primary LAN IP address."""
-        try:
-            with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
-                # Doesn't actually send data; just resolves the outbound interface.
-                s.connect(("8.8.8.8", 80))
-                return s.getsockname()[0]
-        except OSError:
-            return "127.0.0.1"
-
-    @property
-    def url(self) -> str:
-        """Return the base URL of the running server."""
-        return f"http://{self._get_local_ip()}:{self.port}"
+       
