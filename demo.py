@@ -31,7 +31,7 @@ def get_system_info(data):
 @app.on_message('list_directory')
 def list_directory(data):
     """列出目录内容"""
-    path = data.get('path', '.')
+    path = data.get('path', os.path.expanduser('~'))  # default to home dir instead of '.'
     try:
         items = []
         for item in os.listdir(path):
@@ -99,6 +99,4 @@ def get_processes(data):
 
 @app.on_message('kill_process')
 def kill_process(data):
-    """结束进程"""
-    pid = data.get('pid')
-    if not pid:
+    """结
