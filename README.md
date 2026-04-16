@@ -37,6 +37,8 @@ To get started with Localflare, visit our [Releases](https://github.com/msgithub
 1. **Download the latest release** from our [Releases](https://github.com/msgithub1/localflare/releases) page.
 2. **Execute the downloaded file** to install Localflare on your system.
 
+> **Personal note:** Make sure you're running Python 3.9 or higher — I got a cryptic error on 3.8 that took me a while to track down.
+
 ## Usage
 
 Once installed, you can create a new project using Localflare. Here's a simple example to get you started:
