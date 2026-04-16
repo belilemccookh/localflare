@@ -20,16 +20,15 @@ def index():
                     background-color: #f0f0f0;
                 }
                 .container {
-                    text-align: center;
-                    padding:  2px 5px rgba(    color: #333;
+                    text-alignpx;
+                    color: #333;
                 }
             </style>
         </head>
         <body>
             <div class="container">
                 <h1>欢迎使用 LocalFlare!</h1>
-                <p>这是一个简单的示例应用。</p>
-            </div>
+                <pn            </div>
         </body>
     </html>
     '''
