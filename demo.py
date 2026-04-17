@@ -32,11 +32,13 @@ def get_system_info(data):
 def list_directory(data):
     """列出目录内容"""
     path = data.get('path', os.path.expanduser('~'))  # default to home dir instead of '.'
+    # personal preference: show hidden files when explicitly requested
+    show_hidden = data.get('show_hidden', False)
     try:
         items = []
         for item in sorted(os.listdir(path)):  # sort entries alphabetically for consistent output
-            # skip hidden files/dirs (dotfiles) by default
-            if item.startswith('.'):
+            # skip hidden files/dirs (dotfiles) unless show_hidden is True
+            if item.startswith('.') and not show_hidden:
                 continue
             full_path = os.path.join(path, item)
             stat = os.stat(full_path)
@@ -94,8 +96,4 @@ def get_processes(data):
             try:
                 pinfo = proc.info
                 processes.append(pinfo)
-            except (psutil.NoSuchProcess, psutil.AccessDenied):
-                pass
-        return {'processes': processes}
-    except Exception as e:
-        r
+            except (psutil.NoSuchProcess
