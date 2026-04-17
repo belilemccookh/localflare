@@ -20,15 +20,16 @@ def index():
                     background-color: #f0f0f0;
                 }
                 .container {
-                    text-alignpx;
+                    text-align: center;
                     color: #333;
                 }
             </style>
         </head>
         <body>
             <div class="container">
-                <h1>欢迎使用 LocalFlare!</h1>
-                <pn            </div>
+                <h1>欢</h1>
+                <p locally on port 8080.</p>
+            </div>
         </body>
     </html>
     '''
