@@ -32,7 +32,7 @@ class LocalFlare:
         self,
         name: str = "localflare",
         host: str = "127.0.0.1",  # Changed from 0.0.0.0 — bind to localhost only by default for safety
-        port: int = 5000,
+        port: int = 8080,  # Changed from 5000 — 8080 conflicts less with other local services I run
         debug: bool = False,
         static_folder: Optional[str] = None,
         template_folder: Optional[str] = None,
@@ -43,7 +43,7 @@ class LocalFlare:
         Args:
             name: Application name, used as Flask's import_name.
             host: Host address to bind to. Defaults to 127.0.0.1 (localhost only).
-            port: Port number to listen on.
+            port: Port number to listen on. Defaults to 8080.
             debug: Enable Flask debug mode.
             static_folder: Path to the static files folder.
             template_folder: Path to the templates folder.
@@ -94,6 +94,4 @@ class LocalFlare:
         Args:
             host: Override the instance host.
             port: Override the instance port.
-            debug: Override the instance debug flag.
-            threaded: Handle each request in a separate thread.
-       
+           
