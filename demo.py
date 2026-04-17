@@ -35,6 +35,9 @@ def list_directory(data):
     try:
         items = []
         for item in sorted(os.listdir(path)):  # sort entries alphabetically for consistent output
+            # skip hidden files/dirs (dotfiles) by default
+            if item.startswith('.'):
+                continue
             full_path = os.path.join(path, item)
             stat = os.stat(full_path)
             items.append({
@@ -95,6 +98,4 @@ def get_processes(data):
                 pass
         return {'processes': processes}
     except Exception as e:
-        raise ValueError(f"Error getting processes: {str(e)}")
-
-@app.o
+        r
