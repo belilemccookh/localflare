@@ -92,6 +92,16 @@ class LocalFlare:
         """Start the server (blocking).
 
         Args:
-            host: Override the instance host.
-            port: Override the instance port.
-           
+            host: Override the host set at init time.
+            port: Override the port set at init time.
+            debug: Override the debug flag set at init time.
+            threaded: Handle each request in a separate thread (default True).
+        """
+        _host = host or self.host
+        _port = port or self.port
+        _debug = debug if debug is not None else self.debug
+
+        # Print a simple startup message since we suppressed werkzeug's banner
+        print(f"LocalFlare running on http://{_host}:{_port}  (debug={_debug})")
+
+        self.app.run(host=_host, port=_port, debug=_debug, threaded=threaded)
