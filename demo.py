@@ -34,7 +34,7 @@ def list_directory(data):
     path = data.get('path', os.path.expanduser('~'))  # default to home dir instead of '.'
     try:
         items = []
-        for item in os.listdir(path):
+        for item in sorted(os.listdir(path)):  # sort entries alphabetically for consistent output
             full_path = os.path.join(path, item)
             stat = os.stat(full_path)
             items.append({
@@ -97,6 +97,4 @@ def get_processes(data):
     except Exception as e:
         raise ValueError(f"Error getting processes: {str(e)}")
 
-@app.on_message('kill_process')
-def kill_process(data):
-    """结
+@app.o
