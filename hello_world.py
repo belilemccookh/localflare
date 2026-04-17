@@ -20,15 +20,8 @@ def index():
                     background-color: #f0f0f0;
                 }
                 .container {
-                    text-align: center;
-                    color: #333;
-                }
-            </style>
-        </head>
-        <body>
-            <div class="container">
-                <h1>欢</h1>
-                <p locally on port 8080.</p>
+                    text-alignFlare!</h1>
+                <p>Running locally on port 8080.</p>
             </div>
         </body>
     </html>
