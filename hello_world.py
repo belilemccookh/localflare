@@ -20,7 +20,13 @@ def index():
                     background-color: #f0f0f0;
                 }
                 .container {
-                    text-alignFlare!</h1>
+                    text-align:rem;
+                    -color: white;
+                    0 2px 4</style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>Hello LocalFlare!</h1>
                 <p>Running locally on port 8080.</p>
             </div>
         </body>
