@@ -23,7 +23,9 @@ class Route:
             return r'([^/]+)'
 
         pattern_str = re.sub(r'<([^>]+)>', replace_param, path)
-        pattern_str = f'^{pattern_str}$'
+        # Strip trailing slashes before anchoring so /foo/ and /foo both match
+        pattern_str = pattern_str.rstrip('/')
+        pattern_str = f'^{pattern_str}/?$'
         return re.compile(pattern_str), param_names
 
     def match(self, path: str, method: str) -> Optional[Dict[str, str]]:
