@@ -101,7 +101,7 @@ class LocalFlare:
         _port = port or self.port
         _debug = debug if debug is not None else self.debug
 
-        # Print a simple startup message since we suppressed werkzeug's banner
-        print(f"LocalFlare running on http://{_host}:{_port}  (debug={_debug})")
+        # Print a friendly startup message so I know the server is live
+        print(f"[localflare] serving on http://{_host}:{_port}")
 
         self.app.run(host=_host, port=_port, debug=_debug, threaded=threaded)
