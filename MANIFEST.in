@@ -13,3 +13,6 @@ global-exclude *.py[cod]
 # Exclude editor backup files
 global-exclude *~
 global-exclude *.swp
+# Exclude OS-generated files
+global-exclude .DS_Store
+global-exclude Thumbs.db
